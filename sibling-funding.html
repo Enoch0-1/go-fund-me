@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Sibling Funding Request | Enoch</title>
+    <script src="https://tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        /* Premium Animated Background */
+        body {
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #1e293b);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            font-family: 'Inter', sans-serif;
+            color: #f8fafc;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            color: #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(234, 179, 8, 0.6);
+        }
+
+        #progress-fill {
+            width: 12%; /* Update this as you get richer! */
+            background: linear-gradient(90deg, #22c55e, #4ade80);
+            transition: width 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- URGENT ALERT -->
+    <div class="fixed top-6 right-6 bg-red-600 text-white text-[10px] font-black px-4 py-2 rounded-full flex items-center gap-2 shadow-2xl animate-bounce z-50">
+        🚨 SYSTEM ALERT: BROTHERHOOD FUNDS CRITICALLY LOW
+    </div>
+
+    <div class="glass-card max-w-lg w-full rounded-[3.5rem] p-8 md:p-12 text-center border-b-[12px] border-indigo-600">
+        
+        <!-- Header -->
+        <h1 class="text-3xl font-black mb-2 text-indigo-950 uppercase tracking-tighter italic" style="font-family: 'Comic Neue', cursive;">
+            Official Sibling Funding Request
+        </h1>
+        <p class="text-sm text-slate-500 mb-8 leading-relaxed">
+            Dear <b>Damilola</b> and <b>Tejumade</b>, I come to you with a humble (and extremely urgent) request for financial assistance.
+        </p>
+
+        <!-- Sibling Roasts -->
+        <div class="mb-10">
+            <button onclick="tellJoke()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold py-3 px-8 rounded-full transition-all active:scale-95 shadow-lg">
+                Tell Me A Sibling Joke 🎭
+            </button>
+            <div id="joke-box" class="mt-4 text-sm text-indigo-600 h-10 font-black italic flex items-center justify-center">
+                Click for a high-quality roast...
+            </div>
+        </div>
+
+        <!-- Progress Tracking -->
+        <div class="mb-10 bg-slate-100 p-6 rounded-3xl border border-slate-200">
+            <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3">Funding Progress</p>
+            <div class="w-full bg-slate-300 rounded-full h-4 overflow-hidden mb-2">
+                <div id="progress-fill" class="h-full"></div>
+            </div>
+            <p class="text-lg font-black text-slate-800">₦445 <span class="text-slate-400 font-normal">/ ₦5,000</span></p>
+        </div>
+
+        <!-- THE GLOWING ACCOUNT CARD -->
+        <div class="mb-10 bg-slate-900 p-8 rounded-[2.5rem] border-4 border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.3)] relative overflow-hidden group cursor-pointer" onclick="copyAcct()">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 animate-pulse"></div>
+            <div class="relative z-10">
+                <p class="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em] mb-4">Official Collection Account</p>
+                <h2 class="text-5xl font-black text-yellow-500 tracking-tighter mb-2 glow-text animate-bounce">
+                    8064123023
+                </h2>
+                <div class="flex flex-col items-center gap-1">
+                    <p class="text-lg font-black text-white tracking-tight">Moniepoint Bank</p>
+                    <p class="text-[10px] font-bold text-slate-400 italic">Adedeji Enoch — The Best Brother</p>
+                </div>
+                <p class="mt-4 text-[9px] font-black text-sky-400 uppercase underline tracking-widest">Click to Copy Number</p>
+            </div>
+        </div>
+
+        <!-- Donation Tier Selection -->
+        <div class="text-left space-y-6 mb-10">
+            <h3 class="text-xs font-black text-indigo-900 uppercase tracking-widest text-center">Pick Your Solidarity Level</h3>
+            <div class="grid grid-cols-1 gap-3">
+                <label class="flex items-center justify-between p-4 border-2 border-slate-100 rounded-2xl cursor-pointer hover:border-indigo-600 transition">
+                    <span class="text-sm font-bold text-slate-700"><input type="radio" name="amt" class="mr-3 accent-indigo-600"> ₦500 — Sibling Support</span>
+                    <span class="text-[10px] text-slate-400 font-black uppercase">Basic</span>
+                </label>
+                <label class="flex items-center justify-between p-4 border-2 border-slate-100 rounded-2xl cursor-pointer hover:border-indigo-600 transition">
+                    <span class="text-sm font-bold text-slate-700"><input type="radio" name="amt" class="mr-3 accent-indigo-600"> ₦1,000 — Best Brother Fee</span>
+                    <span class="text-[10px] text-indigo-500 font-black uppercase">Gold</span>
+                </label>
+                <label class="flex items-center justify-between p-4 border-4 border-indigo-600/30 bg-indigo-50/30 rounded-2xl cursor-pointer hover:border-indigo-600 transition">
+                    <span class="text-sm font-black text-indigo-900"><input type="radio" name="amt" class="mr-3 accent-indigo-600"> ₦2,000+ — Big Sister Energy</span>
+                    <span class="text-[10px] text-indigo-600 font-black uppercase tracking-widest">VIP</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button onclick="submitRequest()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-6 rounded-3xl shadow-2xl transition-all active:scale-95 uppercase tracking-widest text-lg mb-8">
+            Submit Application 🚀
+        </button>
+
+        <!-- Signature Conclusion -->
+        <div class="mt-10 pt-8 border-t border-slate-100">
+            <div class="bg-indigo-50 p-6 rounded-3xl border-2 border-indigo-100 mb-6">
+                <p class="text-[10px] text-indigo-400 font-black uppercase tracking-widest mb-1">Authenticated By:</p>
+                <p class="text-base font-black text-indigo-900 italic">
+                    ADEDEJI ENOCH — THE BEST BROTHER ON EARTH 🌍✨
+                </p>
+            </div>
+            <p class="text-[9px] text-slate-300 leading-relaxed italic uppercase tracking-tighter">
+                Disclaimer: All donations are non-refundable and will be used for snacks, data, and maintaining my status as the goat.
+            </p>
+        </div>
+    </div>
+
+    <!-- Final Footer Signature -->
+    <div class="mt-8 text-[11px] font-black text-white/40 tracking-[0.4em] uppercase pb-10">
+        Created by <span class="text-yellow-500">Adedeji Enoch</span> — The Best Brother
+    </div>
+
+    <script>
+        function tellJoke() {
+            const jokes = [
+                "I’m the family's 'Limited Edition' model. You guys were just the prototypes.",
+                "Being my sister is a full-time job. I’m just here for the paycheck.",
+                "I don't need a therapist, I just need my sisters to open their Moniepoint apps.",
+                "If sibling love was measured in Naira, I'd be a billionaire. Instead, I'm here.",
+                "Being the best brother on Earth is exhausting. Pay me for my service.",
+                "I’m not the favorite child. I’m just the one who knows where the snacks are hidden."
+            ];
+            document.getElementById('joke-box').innerText = jokes[Math.floor(Math.random() * jokes.length)];
+        }
+
+        function copyAcct() {
+            navigator.clipboard.writeText("8064123023");
+            alert("SUCCESS: Account Number (8064123023) copied! Paste it into your bank app now.");
+        }
+
+        function submitRequest() {
+            const selected = document.querySelector('input[name="amt"]:checked');
+            if (!selected) {
+                alert("HOLD ON: Please select a donation amount. Even the 'Best Brother' tax isn't free!");
+            } else {
+                copyAcct();
+                alert("APPLICATION LOGGED!\n\nAdedeji Enoch (The Best Brother) expects your transfer within 10 minutes. Love you!");
+            }
+        }
+    </script>
+</body>
+</html>
